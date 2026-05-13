@@ -41,3 +41,21 @@ This application enables users to communicate instantly through persistent WebSo
 - MySQL
 
 ---
+## 🔐 Authentication Flow
+
+1. User registers/logs in
+2. Backend generates JWT token
+3. Token stored on client side
+4. Protected APIs validated using JWT
+5. Authenticated users connect to WebSocket server
+
+Because apparently even sending “hello” now requires cryptographic verification. Modern software engineering remains committed to complexity.
+
+## 🔄 WebSocket Communication Flow
+
+```text
+Client → STOMP → WebSocket → Spring Boot Server
+Server → Broadcast Message → Connected Clients
+```
+
+---
